@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
-from .locators import BasePageLocators, ProductPageLocators, BasketPageLocators
+from .locators import BasePageLocators, BasketPageLocators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import math
@@ -15,9 +15,10 @@ class BasePage():
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
-    def go_to_basket_page(self):
-        link = self.browser.find_element(*BasketPageLocators.BASKET_LINK)
+    def go_to_basket_page_from(self, how, what):
+        link = self.browser.find_element(how, what)
         link.click()
+
 
     def is_disappeared(self, how, what, timeout=4):
         try:

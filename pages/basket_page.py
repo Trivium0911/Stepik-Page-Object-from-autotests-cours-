@@ -12,3 +12,9 @@ class BasketPage(BasePage):
         empty_message = self.browser.find_element(*BasketPageLocators.MESSAGE_ABOUT_EMPTY).text
         message = "Ваша корзина пуста"
         assert message in empty_message, "No message about empty basket"
+
+    def open_basket_page_from_main(self):
+        return self.go_to_basket_page_from(*BasketPageLocators.BASKET_LINK_FROM_MAIN)
+
+    def open_basket_page_from_product(self):
+        return self.go_to_basket_page_from(*BasketPageLocators.BASKET_LINK_FROM_PRODUCT)
