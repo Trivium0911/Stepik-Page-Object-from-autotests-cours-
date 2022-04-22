@@ -16,6 +16,13 @@ class ProductPageLocators(object):
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
 
+
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+class BasketPageLocators():
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs")
+    BASKET_HIDDEN_NOT_EMPTY_TITLE = (By.CSS_SELECTOR, "#content_inner > div.basket-title.hidden-xs")
+    MESSAGE_ABOUT_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
