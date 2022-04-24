@@ -1,5 +1,7 @@
+import time
 from .base_page import BasePage
 from .locators import LoginPageLocators
+
 
 class LoginPage(BasePage):
 
@@ -35,3 +37,7 @@ class LoginPage(BasePage):
 
         # нажимаем на кнопку: зарегистрировать
         reg_button.click()
+
+    def make_email_and_pass(self):
+        # генерация почты и передача пароля
+        return str(time.time()) + "@fakemail.org", "myStrongPassword№121"
