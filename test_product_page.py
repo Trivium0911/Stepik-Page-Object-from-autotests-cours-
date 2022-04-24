@@ -14,7 +14,6 @@ class TestGuestAddToBasketFromProductPage:
         page = ProductPage(browser, link)
         page.open()
         page.press_button_add_to_basket()
-        page.solve_quiz_and_get_code()
         page.should_be_message_about_adding()
         page.should_be_message_basket_total()
 
@@ -58,7 +57,7 @@ def test_quest_can_go_to_login_page(browser):
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
 
-@pytest.mark.new
+
 @pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = LinksLocators.PRODUCT_PAGE
