@@ -1,5 +1,4 @@
 import pytest
-import time
 from .pages.locators import LinksLocators
 from .pages.basket_page import BasketPage
 from .pages.main_page import MainPage
