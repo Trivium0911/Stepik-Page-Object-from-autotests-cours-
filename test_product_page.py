@@ -1,5 +1,5 @@
 import pytest
-
+import time
 from .pages.locators import LinksLocators
 from .pages.basket_page import BasketPage
 from .pages.main_page import MainPage
@@ -85,11 +85,10 @@ class TestUserAddToBasketFromProductPage:
         page.open()
         page.should_not_be_success_message()
 
-    def test_user_can_add_product_to_basket(browser, link):
-        link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
+    def test_user_can_add_product_to_basket(self, browser):
+        link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
         page.open()
         page.press_button_add_to_basket()
-        page.solve_quiz_and_get_code()
         page.should_be_message_about_adding()
         page.should_be_message_basket_total()

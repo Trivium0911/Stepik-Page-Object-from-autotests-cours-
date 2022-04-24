@@ -36,5 +36,4 @@ class BasketPageLocators():
 class LinksLocators:
     LOGIN_PAGE = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
     MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
-    PROMO_PAGE = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     PRODUCT_PAGE = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
