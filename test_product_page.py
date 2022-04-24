@@ -72,7 +72,7 @@ class TestUserAddToBasketFromProductPage():
         page.open()
         page.should_not_be_success_message()
 
-    def test_user_can_add_product_to_cart(browser, link):
+    def test_user_can_add_product_to_basket(browser, link):
         link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
         page = ProductPage(browser, link)
         page.open()

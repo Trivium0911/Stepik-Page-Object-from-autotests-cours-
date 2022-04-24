@@ -25,9 +25,16 @@ class ProductPageLocators(object):
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class BasketPageLocators():
     BASKET_LINK_FROM_MAIN = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs")
     BASKET_HIDDEN_NOT_EMPTY_TITLE = (By.CSS_SELECTOR, "#content_inner > div.basket-title.hidden-xs")
     MESSAGE_ABOUT_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
     BASKET_LINK_FROM_PRODUCT = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span")
+
+class LinksLocators:
+    LOGIN_PAGE = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+    MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
+    PROMO_PAGE = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    PRODUCT_PAGE = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
