@@ -8,6 +8,7 @@ from .pages.product_page import ProductPage
 
 class TestGuestAddToBasketFromProductPage:
 
+    @pytest.mark.need_review
     def test_guest_can_add_product_to_basket(self, browser):
         link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
@@ -17,7 +18,6 @@ class TestGuestAddToBasketFromProductPage:
         page.should_be_message_about_adding()
         page.should_be_message_basket_total()
 
-    @pytest.mark.need_review
     def test_guest_cant_see_success_message(self, browser):
         link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
@@ -49,7 +49,7 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.open()
     page.should_be_login_link()
 
-@pytest.mark.need_review
+
 def test_quest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     main_page = MainPage(browser, link)
@@ -58,9 +58,10 @@ def test_quest_can_go_to_login_page(browser):
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
 
+@pytest.mark.new
 @pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/"
+    link = LinksLocators.PRODUCT_PAGE
     page = BasketPage(browser, link)
     page.open()
     page.open_basket_page_from_product()
@@ -94,3 +95,12 @@ class TestUserAddToBasketFromProductPage:
         page.press_button_add_to_basket()
         page.should_be_message_about_adding()
         page.should_be_message_basket_total()
+
+@pytest.mark.need_review
+def test_quest_can_go_to_login_page_from_product_page(browser):
+    link = LinksLocators.MAIN_PAGE
+    main_page = MainPage(browser, link)
+    main_page.open()
+    main_page.go_to_login_page()
+    login_page = LoginPage(browser, browser.current_url)
+    login_page.should_be_login_page()
