@@ -8,8 +8,8 @@ from .pages.product_page import ProductPage
 
 class TestGuestAddToBasketFromProductPage:
 
-    def test_guest_can_add_product_to_basket(self, browser, link):
-        link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{link}"
+    def test_guest_can_add_product_to_basket(self, browser):
+        link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
         page.open()
         page.press_button_add_to_basket()
@@ -18,7 +18,7 @@ class TestGuestAddToBasketFromProductPage:
         page.should_be_message_basket_total()
 
     def test_guest_cant_see_success_message(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+        link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
         page.open()
         page.should_not_be_success_message()
@@ -79,7 +79,7 @@ class TestUserAddToBasketFromProductPage:
 
 
     def test_user_cant_see_success_message(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+        link = LinksLocators.PRODUCT_PAGE
         page = ProductPage(browser, link)
         page.open()
         page.should_not_be_success_message()
